@@ -12,6 +12,7 @@
 class WString
 {
 public:
+	WString();
 	WString(const char* str);
 	~WString();
 	

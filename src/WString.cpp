@@ -6,6 +6,10 @@
 #include "WString.h"
 
 
+WString::WString() : mStr("Hello")
+{
+}
+
 WString::WString(const char *str) : mStr(str)
 {
 }
@@ -21,6 +25,6 @@ const char* WString::cstr()
 
 std::ostream& operator<<(std::ostream& stream, const WString& other)
 {
-	stream << other.mStr << std::endl;
+	stream << other.mStr;
 	return stream;
 }
