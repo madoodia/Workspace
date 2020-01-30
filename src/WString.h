@@ -12,13 +12,36 @@
 class WString
 {
 public:
+	// Default Constructor
 	WString();
-	WString(const char* str);
+
+	// Constructor
+	explicit WString(const char* str);
+	
+	// Copy Constructor
+	WString(const WString& str);
+	
+	// Destructor
 	~WString();
 	
-	const char* cstr();
+	// Assignment Operator
+	WString& operator=(const char* other);
+	WString& operator=(const WString& other);
 
+	// Other Operators
+	WString& operator+=(const char* str);
+	WString& operator+=(const WString& str);
+
+	// non-member friend functions
+	//friend WString operator+(const WString& lhs, const char* rhs);
+	//friend WString operator+(const char* lhs, const WString& rhs);
+	//friend WString operator+(const WString& lhs, const WString& rhs);
 	friend std::ostream& operator<<(std::ostream& stream, const WString& other);
+
+	// Member Functions
+	const char* cstr() const;
+	const char* name() const;
+	void setName(const char* name);
 
 private:
 	const char* mStr;
