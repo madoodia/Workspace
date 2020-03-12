@@ -9,8 +9,8 @@
 #include <ostream>
 #include "core.h"
 
-namespace workspace
-{
+// namespace workspace
+// {
 
 class String
 {
@@ -50,6 +50,6 @@ private:
 	const char *mStr;
 };
 
-} // namespace workspace
+// } // namespace workspace
 
 #endif // WSTRING_H

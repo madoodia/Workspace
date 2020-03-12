@@ -4,7 +4,7 @@
 
 #include "string.h"
 
-using namespace workspace;
+// using namespace workspace;
 
 String::String() : mStr("")
 {
@@ -90,6 +90,6 @@ String &String::operator=(const String &other)
 
 std::ostream &operator<<(std::ostream &stream, const String &other)
 {
-	stream << other.mStr;
+	stream << other.cstr();
 	return stream;
 }

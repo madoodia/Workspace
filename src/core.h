@@ -2,7 +2,7 @@
 (C) 2019
 ------------------ */
 
-#ifndef STRING_H
-#define STRING_H
+#ifndef WCORE_H
+#define WCORE_H
 
-#endif // STRING_H
+#endif // WCORE_H

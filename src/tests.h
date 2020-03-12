@@ -2,11 +2,14 @@
 (C) 2019
 ------------------ */
 
+#ifndef WTESTS_H
+#define WTESTS_H
+
 #include <gtest/gtest.h>
 
 #include "string.h"
 
-using namespace workspace;
+// using namespace workspace;
 
 TEST(TestWString, TestHello)
 {
@@ -83,3 +86,5 @@ TEST(TestWString, CopyConstructor)
 //	newStr = hello + name;
 //	EXPECT_STREQ("hi madoodia", newStr.cstr());
 //}
+
+#endif // WTESTS_H

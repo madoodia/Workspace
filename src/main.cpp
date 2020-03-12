@@ -4,7 +4,7 @@
 
 #include <cstdio>
 
-#include "WString.h"
+#include "string.h"
 
 int main(int argc, char *argv[])
 {
