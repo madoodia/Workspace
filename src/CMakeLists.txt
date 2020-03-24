@@ -9,9 +9,8 @@ cmake_minimum_required(VERSION 3.2)
 project($ENV{BASENAME} CXX)
 
 
-file(GLOB SOURCES
-    string.h
-    string.cpp
+set(SOURCES_CPP_FILES
+    "string.cpp"
 )
 
 # Locate GTest
@@ -19,7 +18,7 @@ find_package(GTest REQUIRED)
 include_directories(${GTEST_INCLUDE_DIRS})
  
 # Link runTests with what we want to test and the GTest and pthread library
-add_executable($ENV{FILE_NAME} $ENV{FILE_NAME}.cpp ${SOURCES})
+add_executable($ENV{FILE_NAME} $ENV{FILE_NAME}.cpp ${SOURCES_CPP_FILES})
 target_link_libraries($ENV{FILE_NAME} ${GTEST_LIBRARIES} pthread)
 
 
