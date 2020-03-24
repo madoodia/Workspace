@@ -7,6 +7,9 @@
 export CPP_FILE_DIR=$1
 export FILE_NAME=$2
 
+# echo $CPP_FILE_DIR
+# echo $FILE_NAME
+
 BASEDIR=$(dirname "$0")
 TARGETDIR=$(dirname $CPP_FILE_DIR)
 BASENAME=$(basename $CPP_FILE_DIR)

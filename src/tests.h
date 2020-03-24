@@ -9,24 +9,22 @@
 
 #include "string.h"
 
-// using namespace workspace;
-
 TEST(TestWString, TestHello)
 {
-	String str;
+	wksp::String str;
 	EXPECT_STREQ("", str.cstr());
 }
 
 TEST(TestWString, TestHelloOmid)
 {
-	String *strPtr = new String("Hello Omid!");
+	wksp::String *strPtr = new wksp::String("Hello Omid!");
 	EXPECT_STREQ("Hello Omid!", strPtr->cstr());
 }
 
 TEST(TestWString, GetMyName)
 {
-	String str("madoodia");
-	String strName(str.name());
+	wksp::String str("madoodia");
+	wksp::String strName(str.name());
 
 	EXPECT_STREQ("madoodia", strName.cstr());
 }
@@ -34,16 +32,16 @@ TEST(TestWString, GetMyName)
 TEST(TestWString, AssignmentOperatorTest1)
 {
 	// Explicit call
-	String str = String("madoodia"); // or String str("madoodia");
-	str = "hello";					 // str.operator=("hello");
+	wksp::String str = wksp::String("madoodia"); // or wksp::String str("madoodia");
+	str = "hello";								 // str.operator=("hello");
 
 	EXPECT_STREQ("hello", str.name());
 }
 
 TEST(TestWString, AssignmentOperatorTest2)
 {
-	String person1("madoodia");
-	String person2("omid");
+	wksp::String person1("madoodia");
+	wksp::String person2("omid");
 
 	person1 = person2;
 
@@ -53,16 +51,18 @@ TEST(TestWString, AssignmentOperatorTest2)
 
 TEST(TestWString, CopyConstructor)
 {
-	String person1("madoodia");
-	String person2(person1);
+	wksp::String person1("madoodia");
+	wksp::String person2(person1);
 
 	EXPECT_STREQ("madoodia", person1.cstr());
 	EXPECT_STREQ("madoodia", person2.cstr());
 }
 
+// =======================================
+
 //TEST(TestWString, AddTwoString1)
 //{
-//	String str("hi");
+//	wksp::String str("hi");
 //
 //	str += " omid"; // str = str + name
 //	EXPECT_STREQ("hi omid", str.cstr());
@@ -70,8 +70,8 @@ TEST(TestWString, CopyConstructor)
 
 //TEST(TestWString, AddTwoString2)
 //{
-//	String hello("hi");
-//	String name("madoodia");
+//	wksp::String hello("hi");
+//	wksp::String name("madoodia");
 //
 //	hello += name;
 //	EXPECT_STREQ("hi madoodia", hello.cstr());
@@ -79,10 +79,10 @@ TEST(TestWString, CopyConstructor)
 
 //TEST(TestWString, AddTwoString3)
 //{
-//	String hello("hi");
-//	String name("madoodia");
+//	wksp::String hello("hi");
+//	wksp::String name("madoodia");
 //
-//	String newStr;
+//	wksp::String newStr;
 //	newStr = hello + name;
 //	EXPECT_STREQ("hi madoodia", newStr.cstr());
 //}

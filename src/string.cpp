@@ -4,7 +4,8 @@
 
 #include "string.h"
 
-// using namespace workspace;
+namespace wksp
+{
 
 String::String() : mStr("")
 {
@@ -93,3 +94,5 @@ std::ostream &operator<<(std::ostream &stream, const String &other)
 	stream << other.cstr();
 	return stream;
 }
+
+} // namespace wksp
