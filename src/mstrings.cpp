@@ -2,7 +2,7 @@
 /* (C) 2020 madoodia.com */
 /* --------------------- */
 
-#include "wstring.h"
+#include "mstrings.h"
 
 namespace wksp
 {
@@ -54,12 +54,12 @@ String &String::operator=(const String &other)
   return *this;
 }
 
-//String& String::operator+=(const char* str)
-//{
-//	String result;
-//	result = mStr + String(str);
-//	return result;
-//}
+// String &String::operator+=(const char *str)
+// {
+//   String result;
+//   result.setName(append((char *)mStr, (char *)str));
+//   return result;
+// }
 
 //String& String::operator+=(const String& str)
 //{

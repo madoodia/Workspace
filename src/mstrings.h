@@ -2,8 +2,8 @@
 /* (C) 2020 madoodia.com */
 /* --------------------- */
 
-#ifndef WSTRING_H
-#define WSTRING_H
+#ifndef MSTRINGS_H
+#define MSTRINGS_H
 
 #include "api.h"
 
@@ -30,8 +30,8 @@ public:
   String &operator=(const String &other);
 
   // Other Operators
-  String &operator+=(const char *str);
-  String &operator+=(const String &str);
+  // String &operator+=(const char *str);
+  // String &operator+=(const String &str);
 
   // non-member friend functions
   //friend String operator+(const String& lhs, const char* rhs);
@@ -50,4 +50,4 @@ private:
 
 } // namespace wksp
 
-#endif // WSTRING_H
+#endif // MSTRINGS_H

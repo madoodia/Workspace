@@ -10,7 +10,10 @@
     "fstream": "cpp",
     "qquickview": "cpp",
     "qsgrendererinterface": "cpp",
-    "qquickwindow": "cpp"
+    "qquickwindow": "cpp",
+    "atomic": "cpp",
+    "chrono": "cpp",
+    "string": "cpp"
   },
   "editor.formatOnSave": true,
   "files.autoSave": "onFocusChange",

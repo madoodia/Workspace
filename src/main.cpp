@@ -3,29 +3,17 @@
 /* --------------------- */
 
 #include "api.h"
-
-// Tests
-#if USE_GTEST
-#include "wstring_tests.h"
-int runAllTests(int argc, char *argv[])
-{
-  // googleteststest separated files
-  ::testing::InitGoogleTest(&argc, argv);
-  return RUN_ALL_TESTS();
-}
-#else
-int runAllTests(int argc, char *argv[])
-{
-  return 0;
-}
-#endif
+#include "mstrings_tests.h"
 
 // Entry Point
 int main(int argc, char *argv[])
 {
   printf("Hello From main\n");
 
-  int testResult = runAllTests(argc, argv);
+#if USE_GTEST
+  ::testing::InitGoogleTest(&argc, argv);
+  int testResult = RUN_ALL_TESTS();
+#endif // USE_GTEST
 
   return 0;
 }

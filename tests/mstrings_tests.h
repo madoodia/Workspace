@@ -2,13 +2,11 @@
 /* (C) 2020 madoodia.com */
 /* --------------------- */
 
-#ifndef WSTRINGTESTS_H
-#define WSTRINGTESTS_H
-
-#include <thread>
+#ifndef MSTRINGSTESTS_H
+#define MSTRINGSTESTS_H
 
 #include "api.h"
-#include "wstring.h"
+#include "mstrings.h"
 
 TEST(TestWString, TestEmptyString)
 {
@@ -62,15 +60,32 @@ TEST(TestWString, TestAssignmentOperator2)
   EXPECT_STREQ("omid", person1.cstr());
 }
 
+TEST(TestWString, TestSetName)
+{
+  wksp::String str;
+
+  str.setName("madoodia");
+  EXPECT_STREQ("madoodia", str.cstr());
+}
+
+// TEST(TestWString, TestAppend)
+// {
+//   wksp::String str1("hi");
+//   wksp::String str2(" bye");
+
+//   str1.append(str1.cstr(), str2.cstr());
+//   EXPECT_STREQ("madoodia", str.cstr());
+// }
+
 // =======================================
 
-//TEST(TestWString, AddTwoString1)
-//{
-//	wksp::String str("hi");
-//
-//	str += " omid"; // str = str + name
-//	EXPECT_STREQ("hi omid", str.cstr());
-//}
+// TEST(TestWString, TestAddTwoString)
+// {
+//   wksp::String str("hi");
+
+//   str += " madoodia"; // str = str + name
+//   EXPECT_STREQ("hi madoodia", str.cstr());
+// }
 
 //TEST(TestWString, AddTwoString2)
 //{
@@ -91,4 +106,4 @@ TEST(TestWString, TestAssignmentOperator2)
 //	EXPECT_STREQ("hi madoodia", newStr.cstr());
 //}
 
-#endif // WSTRINGTESTS_H
+#endif // MSTRINGSTESTS_H

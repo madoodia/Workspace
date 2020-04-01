@@ -4,7 +4,7 @@
 
 set(SOURCES
     "main.cpp"
-    "wstring.cpp"
+    "mstrings.cpp"
 )
 
 add_executable($ENV{TARGET_NAME} ${SOURCES})

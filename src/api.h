@@ -5,9 +5,11 @@
 #ifndef WAPI_H
 #define WAPI_H
 
+#include <chrono>
 #include <cstdio>
 #include <cstdlib>
 #include <ostream>
+#include <thread>
 
 #include <gtest/gtest.h>
 
