@@ -6,7 +6,6 @@
 #define WSTRINGTESTS_H
 
 #include "api.h"
-
 #include "wstring.h"
 
 TEST(TestWString, TestHello)
