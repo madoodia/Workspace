@@ -5,8 +5,7 @@
 #ifndef WSTRING_H
 #define WSTRING_H
 
-#include <cstdlib>
-#include <ostream>
+#include "api.h"
 
 namespace wksp
 {

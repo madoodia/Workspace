@@ -5,7 +5,7 @@
 #ifndef WSTRINGTESTS_H
 #define WSTRINGTESTS_H
 
-#include <gtest/gtest.h>
+#include "api.h"
 
 #include "wstring.h"
 

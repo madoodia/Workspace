@@ -2,10 +2,6 @@
 /* (C) 2020 madoodia.com */
 /* --------------------- */
 
-#include <cstdio>
-
-#include <gtest/gtest.h>
-
 #include "api.h"
 
 // Tests
