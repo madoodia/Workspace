@@ -31,4 +31,4 @@ make
 cp src/$TARGET_NAME ..
 cd ..
 
-./$TARGET_NAME --gtest_output="xml:./$FILE_NAME.xml"
+./$TARGET_NAME --gtest_output="xml:./$TARGET_NAME.xml"
