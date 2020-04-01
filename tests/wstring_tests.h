@@ -5,6 +5,8 @@
 #ifndef WSTRINGTESTS_H
 #define WSTRINGTESTS_H
 
+#include <thread>
+
 #include "api.h"
 #include "wstring.h"
 
@@ -56,6 +58,7 @@ TEST(TestWString, TestAssignmentOperator2)
 
   person1 = person2;
 
+  std::this_thread::sleep_for(std::chrono::milliseconds(1000));
   EXPECT_STREQ("omid", person1.cstr());
 }
 

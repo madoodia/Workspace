@@ -23,7 +23,7 @@ int runAllTests(int argc, char *argv[])
 // Entry Point
 int main(int argc, char *argv[])
 {
-  printf("Hello\n");
+  printf("Hello From main\n");
 
   int testResult = runAllTests(argc, argv);
 
