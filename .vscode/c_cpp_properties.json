@@ -22,10 +22,11 @@
                 "${SDKS_LOCATION}/googletest/include",
                 "${DEV_LOCATION}/madAPI/include/**"
             ],
+            "defines": [],
             "compilerPath": "/opt/rh/devtoolset-6/root/bin/gcc",
             "cStandard": "c11",
             "cppStandard": "c++11",
-            "intelliSenseMode": "gcc-x64"
+            "intelliSenseMode": "clang-x64"
         }
     ],
     "version": 4
