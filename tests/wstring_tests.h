@@ -8,36 +8,48 @@
 #include "api.h"
 #include "wstring.h"
 
-TEST(TestWString, TestHello)
+TEST(TestWString, TestEmptyString)
 {
   wksp::String str;
   EXPECT_STREQ("", str.cstr());
 }
 
-TEST(TestWString, TestHelloOmid)
+TEST(TestWString, TestGetMyName)
 {
-  wksp::String *strPtr = new wksp::String("Hello Omid!");
-  EXPECT_STREQ("Hello Omid!", strPtr->cstr());
+  wksp::String myName("madoodia");
+  EXPECT_STREQ("madoodia", myName.cstr());
 }
 
-TEST(TestWString, GetMyName)
+TEST(TestWString, TestGetMyNamePtr)
 {
-  wksp::String str("madoodia");
-  wksp::String strName(str.name());
-
-  EXPECT_STREQ("madoodia", strName.cstr());
+  wksp::String *strPtr = new wksp::String("madoodia");
+  EXPECT_STREQ("madoodia", strPtr->cstr());
+  delete strPtr;
 }
 
-TEST(TestWString, AssignmentOperatorTest1)
+TEST(TestWString, TestCopyConstructor)
+{
+  wksp::String str1("madoodia");
+  wksp::String str2(str1);
+  EXPECT_STREQ("madoodia", str2.cstr());
+}
+
+TEST(TestWString, TestNameFunction)
+{
+  wksp::String str1("madoodia");
+  EXPECT_STREQ("madoodia", str1.name());
+}
+
+TEST(TestWString, TestAssignmentOperator1)
 {
   // Explicit call
-  wksp::String str = wksp::String("madoodia"); // or wksp::String str("madoodia");
-  str = "hello";                               // str.operator=("hello");
+  wksp::String str; // or wksp::String str("madoodia");
+  str = "hello";    // str.operator=("hello");
 
   EXPECT_STREQ("hello", str.name());
 }
 
-TEST(TestWString, AssignmentOperatorTest2)
+TEST(TestWString, TestAssignmentOperator2)
 {
   wksp::String person1("madoodia");
   wksp::String person2("omid");
@@ -45,16 +57,6 @@ TEST(TestWString, AssignmentOperatorTest2)
   person1 = person2;
 
   EXPECT_STREQ("omid", person1.cstr());
-  EXPECT_STREQ("omid", person2.cstr());
-}
-
-TEST(TestWString, CopyConstructor)
-{
-  wksp::String person1("madoodia");
-  wksp::String person2(person1);
-
-  EXPECT_STREQ("madoodia", person1.cstr());
-  EXPECT_STREQ("madoodia", person2.cstr());
 }
 
 // =======================================
