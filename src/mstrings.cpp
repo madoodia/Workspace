@@ -1,26 +1,26 @@
-/* madoodia@gmail.com
-(C) 2019
------------------- */
+/* --------------------- */
+/* (C) 2020 madoodia.com */
+/* --------------------- */
 
-#include "string.h"
+#include "mstrings.h"
 
 namespace wksp
 {
 
 String::String() : mStr("")
 {
-	//printf("Default Constructor\n");
+  //printf("Default Constructor\n");
 }
 
 String::String(const char *str) : mStr(str)
 {
-	//printf("Second Constructor\n");
+  //printf("Second Constructor\n");
 }
 
 String::String(const String &str)
 {
-	//printf("Copy Constructor\n");
-	mStr = str.cstr();
+  //printf("Copy Constructor\n");
+  mStr = str.cstr();
 }
 
 String::~String()
@@ -29,37 +29,37 @@ String::~String()
 
 const char *String::cstr() const
 {
-	return mStr;
+  return mStr;
 }
 
 const char *String::name() const
 {
-	return mStr;
+  return mStr;
 }
 
 void String::setName(const char *name)
 {
-	mStr = name;
+  mStr = name;
 }
 
 String &String::operator=(const char *other)
 {
-	mStr = other;
-	return *this;
+  mStr = other;
+  return *this;
 }
 
 String &String::operator=(const String &other)
 {
-	mStr = other.cstr();
-	return *this;
+  mStr = other.cstr();
+  return *this;
 }
 
-//String& String::operator+=(const char* str)
-//{
-//	String result;
-//	result = mStr + String(str);
-//	return result;
-//}
+// String &String::operator+=(const char *str)
+// {
+//   String result;
+//   result.setName(append((char *)mStr, (char *)str));
+//   return result;
+// }
 
 //String& String::operator+=(const String& str)
 //{
@@ -91,8 +91,8 @@ String &String::operator=(const String &other)
 
 std::ostream &operator<<(std::ostream &stream, const String &other)
 {
-	stream << other.cstr();
-	return stream;
+  stream << other.cstr();
+  return stream;
 }
 
 } // namespace wksp

@@ -10,10 +10,22 @@
             "linux": {
                 "command": "${workspaceFolder}/build.sh",
             },
-            "args": [
-                "${fileDirname}",
-                "${fileBasenameNoExtension}"
-            ],
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "type": "shell",
+            "label": "build_debug",
+            "windows": {
+                "command": "${workspaceFolder}/build_debug.bat",
+            },
+            "linux": {
+                "command": "${workspaceFolder}/build_debug.sh",
+            },
+            "args": [],
             "problemMatcher": [],
             "group": {
                 "kind": "build",
@@ -24,11 +36,26 @@
             "type": "shell",
             "label": "run",
             "windows": {
-                "command": "${fileDirname}/${fileBasenameNoExtension}.exe",
+                "command": "${workspaceFolder}/${workspaceFolderBasename}.exe",
             },
             "linux": {
-                "command": "${fileDirname}/${fileBasenameNoExtension}",
+                "command": "${workspaceFolder}/${workspaceFolderBasename}",
             },
+            "problemMatcher": []
+        },
+        {
+            "type": "shell",
+            "label": "qmlscene",
+            "command": [
+                "export PATH=$SDKS_LOCATION/Qt5/bin:$PATH;",
+                "qmlscene ${fileDirname}/${fileBasename}"
+            ],
+            "problemMatcher": []
+        },
+        {
+            "type": "shell",
+            "label": "python",
+            "command": "python ${fileDirname}/${fileBasename}",
             "problemMatcher": []
         }
     ]

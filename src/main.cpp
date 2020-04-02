@@ -1,13 +1,19 @@
-/* madoodia@gmail.com
-(C) 2019
------------------- */
+/* --------------------- */
+/* (C) 2020 madoodia.com */
+/* --------------------- */
 
-#include <cstdio>
+#include "api.h"
+#include "mstrings_tests.h"
 
-#include "string.h"
-
+// Entry Point
 int main(int argc, char *argv[])
 {
-	printf("Hello\n");
-	return 0;
+  printf("Hello From main\n");
+
+#if 0
+  ::testing::InitGoogleTest(&argc, argv);
+  int testResult = RUN_ALL_TESTS();
+#endif // USE_GTEST
+
+  return 0;
 }

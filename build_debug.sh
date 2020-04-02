@@ -4,8 +4,8 @@
 # (C) 2020
 # ..................
 
-# export CPP_FILE_DIR=$1
-# export FILE_NAME=$2
+export ARG1=$1
+export ARG2=$2
 
 # echo $CPP_FILE_DIR
 # echo $FILE_NAME
@@ -25,10 +25,10 @@ rm -rf build
 mkdir build
 cd build
 
-cmake -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH=$GTEST_LOCATION ..
+cmake -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_PREFIX_PATH=$GTEST_LOCATION ..
 cmake --build .
 
 cp src/$TARGET_NAME ..
 cd ..
 
-./$TARGET_NAME --gtest_output="xml:./$TARGET_NAME.xml"
+# ./$TARGET_NAME $ARG1 $ARG2
