@@ -7,8 +7,8 @@ set(SOURCES
     "mstrings.cpp"
 )
 
-add_executable($ENV{TARGET_NAME} ${SOURCES})
 
+add_executable($ENV{TARGET_NAME} ${SOURCES})
 
 # Locate GTest
 find_package(GTest REQUIRED)
