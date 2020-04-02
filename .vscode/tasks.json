@@ -25,6 +25,7 @@
             "linux": {
                 "command": "${workspaceFolder}/build_debug.sh",
             },
+            "args": [],
             "problemMatcher": [],
             "group": {
                 "kind": "build",

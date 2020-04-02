@@ -25,7 +25,7 @@ rm -rf build
 mkdir build
 cd build
 
-cmake -G "Unix Makefiles" -DCMAKE_PREFIX_PATH=$GTEST_LOCATION ..
+cmake -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH=$GTEST_LOCATION ..
 cmake --build .
 
 cp src/$TARGET_NAME ..

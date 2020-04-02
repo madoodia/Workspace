@@ -9,7 +9,10 @@
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceFolder}/${workspaceFolderBasename}",
-            "args": [],
+            "args": [
+                "hello",
+                "madoodia"
+            ],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
             "environment": [],
