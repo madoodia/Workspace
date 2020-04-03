@@ -10,10 +10,14 @@ int main(int argc, char *argv[])
 {
   printf("Hello From main\n");
 
-#if 0
+#if USE_GTEST
   ::testing::InitGoogleTest(&argc, argv);
   int testResult = RUN_ALL_TESTS();
 #endif // USE_GTEST
+
+  // ---------------------------
+
+  // ---------------------------
 
   return 0;
 }

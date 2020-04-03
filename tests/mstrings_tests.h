@@ -56,7 +56,7 @@ TEST(TestWString, TestAssignmentOperator2)
 
   person1 = person2;
 
-  std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+  std::this_thread::sleep_for(std::chrono::milliseconds(200));
   EXPECT_STREQ("omid", person1.cstr());
 }
 
@@ -68,42 +68,62 @@ TEST(TestWString, TestSetName)
   EXPECT_STREQ("madoodia", str.cstr());
 }
 
-// TEST(TestWString, TestAppend)
-// {
-//   wksp::String str1("hi");
-//   wksp::String str2(" bye");
+TEST(TestWString, TestAppend)
+{
+  wksp::String str1("hi ");
+  wksp::String str2("bye!");
 
-//   str1.append(str1.cstr(), str2.cstr());
-//   EXPECT_STREQ("madoodia", str.cstr());
-// }
+  str1.append(str2.cstr());
+  EXPECT_STREQ("hi bye!", str1.cstr());
+}
 
 // =======================================
 
-// TEST(TestWString, TestAddTwoString)
-// {
-//   wksp::String str("hi");
+TEST(TestWString, TestAddTwoString)
+{
+  wksp::String str("hi");
 
-//   str += " madoodia"; // str = str + name
-//   EXPECT_STREQ("hi madoodia", str.cstr());
-// }
+  str += " madoodia"; // str = str + name
+  EXPECT_STREQ("hi madoodia", str.cstr());
+}
 
-//TEST(TestWString, AddTwoString2)
-//{
-//	wksp::String hello("hi");
-//	wksp::String name("madoodia");
-//
-//	hello += name;
-//	EXPECT_STREQ("hi madoodia", hello.cstr());
-//}
+TEST(TestWString, AddTwoString2)
+{
+  wksp::String hello("hi");
+  wksp::String name(" madoodia");
 
-//TEST(TestWString, AddTwoString3)
-//{
-//	wksp::String hello("hi");
-//	wksp::String name("madoodia");
-//
-//	wksp::String newStr;
-//	newStr = hello + name;
-//	EXPECT_STREQ("hi madoodia", newStr.cstr());
-//}
+  hello += name; // hello.operator+=(name)
+  EXPECT_STREQ("hi madoodia", hello.cstr());
+}
+
+TEST(TestWString, AddTwoString3)
+{
+  wksp::String hello("hi ");
+  const char *name = "madoodia";
+
+  wksp::String result;
+  result = hello + name;
+  EXPECT_STREQ("hi madoodia", result.cstr());
+}
+
+TEST(TestWString, AddTwoString4)
+{
+  const char *hello = "hi ";
+  wksp::String name("madoodia");
+
+  wksp::String result;
+  result = hello + name;
+  EXPECT_STREQ("hi madoodia", result.cstr());
+}
+
+TEST(TestWString, AddTwoString5)
+{
+  wksp::String hello("hi ");
+  wksp::String name("madoodia");
+
+  wksp::String result;
+  result = hello + name;
+  EXPECT_STREQ("hi madoodia", result.cstr());
+}
 
 #endif // MSTRINGSTESTS_H

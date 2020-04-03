@@ -13,7 +13,10 @@
     "qquickwindow": "cpp",
     "atomic": "cpp",
     "chrono": "cpp",
-    "string": "cpp"
+    "string": "cpp",
+    "functional": "cpp",
+    "sstream": "cpp",
+    "iosfwd": "cpp"
   },
   "editor.formatOnSave": true,
   "files.autoSave": "onFocusChange",
