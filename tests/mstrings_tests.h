@@ -77,8 +77,6 @@ TEST(TestWString, TestAppend)
   EXPECT_STREQ("hi bye!", str1.cstr());
 }
 
-// =======================================
-
 TEST(TestWString, TestAddTwoString)
 {
   wksp::String str("hi");

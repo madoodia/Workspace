@@ -22,6 +22,7 @@ export GTEST_LOCATION=$SDKS_LOCATION/googletest
 # export PATH=$SDKS_LOCATION/Qt5/bin:$PATH
 
 rm -rf build
+rm -rf $TARGET_NAME.xml
 mkdir build
 cd build
 
