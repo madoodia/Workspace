@@ -1,5 +1,8 @@
 # Workspace
-A place for learning C++
+Implementing Custom Data Structures in C++ [String, Vector, List, Vector3D, Matrix, ...] for Study and Use
 
-- Using Visual Studio 2019 as IDE
-- Using Googletest for TDD
+- Using CMake to create a custom Build System
+- Clang-Format
+- TDD with GoogleTest
+- Documentation with Doxygen
+...
