@@ -2,9 +2,9 @@
 /* (C) 2020 madoodia.com */
 /* --------------------- */
 
-#include "mstrings.h"
+#include "mString.h"
 
-namespace wksp
+namespace mapi
 {
 
 String::String() : mStr("")
@@ -20,7 +20,7 @@ String::String(const char *str) : mStr(str)
 String::String(const String &str)
 {
   //printf("Copy Constructor\n");
-  mStr = str.cstr();
+  mStr = str.name();
 }
 
 String::~String()
@@ -42,22 +42,22 @@ String combine(const char *str1, const char *str2)
 
 String operator+(const String &lhs, const char *rhs)
 {
-  return combine(lhs.cstr(), rhs);
+  return combine(lhs.name(), rhs);
 }
 
 String operator+(const char *lhs, const String &rhs)
 {
-  return combine(lhs, rhs.cstr());
+  return combine(lhs, rhs.name());
 }
 
 String operator+(const String &lhs, const String &rhs)
 {
-  return combine(lhs.cstr(), rhs.cstr());
+  return combine(lhs.name(), rhs.name());
 }
 
 std::ostream &operator<<(std::ostream &stream, const String &other)
 {
-  stream << other.cstr();
+  stream << other.name();
   return stream;
 }
 
@@ -65,11 +65,6 @@ std::ostream &operator<<(std::ostream &stream, const String &other)
 int String::size() const
 {
   return strlen(mStr);
-}
-
-const char *String::cstr() const
-{
-  return mStr;
 }
 
 const char *String::name() const
@@ -84,7 +79,7 @@ void String::setName(const char *name)
 
 void String::append(const char *str)
 {
-  mStr = combine(mStr, str).cstr();
+  mStr = combine(mStr, str).name();
 }
 
 String &String::operator=(const char *other)
@@ -95,7 +90,7 @@ String &String::operator=(const char *other)
 
 String &String::operator=(const String &other)
 {
-  mStr = other.cstr();
+  mStr = other.name();
   return *this;
 }
 
@@ -107,8 +102,8 @@ String &String::operator+=(const char *str)
 
 String &String::operator+=(const String &other)
 {
-  *this = combine(mStr, other.cstr());
+  *this = combine(mStr, other.name());
   return *this;
 }
 
-} // namespace wksp
+} // namespace mapi

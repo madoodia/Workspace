@@ -7,7 +7,7 @@
 
 #include "api.h"
 
-namespace wksp
+namespace mapi
 {
 
 class String
@@ -34,7 +34,6 @@ public:
   String &operator+=(const String &other);
 
   // Member Functions
-  const char *cstr() const;
   const char *name() const;
   void setName(const char *name);
   int size() const;
@@ -51,6 +50,6 @@ private:
   const char *mStr;
 };
 
-} // namespace wksp
+} // namespace mapi
 
 #endif // MSTRINGS_H

@@ -2,5 +2,4 @@
 # (C) 2020 madoodia.com #
 # --------------------- #
 
-cmake_minimum_required(VERSION 3.3)
-project($ENV{TARGET_NAME} CXX)
+# If we want to create an API

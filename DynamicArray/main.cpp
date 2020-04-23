@@ -3,13 +3,11 @@
 /* --------------------- */
 
 #include "api.h"
-#include "mstrings_tests.h"
+#include "tests.h"
 
 // Entry Point
 int main(int argc, char *argv[])
 {
-  printf("Hello From main\n");
-
 #if USE_GTEST
   ::testing::InitGoogleTest(&argc, argv);
   int testResult = RUN_ALL_TESTS();
