@@ -7,7 +7,7 @@ project($ENV{TARGET_NAME} CXX)
 
 set(SOURCES
     "main.cpp"
-    "mDynamicArray.cpp"
+    "mStack.cpp"
 )
 
 include_directories(../Core)
