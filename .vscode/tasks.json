@@ -1,62 +1,167 @@
 {
-    "version": "2.0.0",
-    "tasks": [
-        {
-            "type": "shell",
-            "label": "build",
-            "windows": {
-                "command": "${workspaceFolder}/build.bat",
-            },
-            "linux": {
-                "command": "${workspaceFolder}/build.sh",
-            },
-            "problemMatcher": [],
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            }
-        },
-        {
-            "type": "shell",
-            "label": "build_debug",
-            "windows": {
-                "command": "${workspaceFolder}/build_debug.bat",
-            },
-            "linux": {
-                "command": "${workspaceFolder}/build_debug.sh",
-            },
-            "args": [],
-            "problemMatcher": [],
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            }
-        },
-        {
-            "type": "shell",
-            "label": "run",
-            "windows": {
-                "command": "${workspaceFolder}/${workspaceFolderBasename}.exe",
-            },
-            "linux": {
-                "command": "${workspaceFolder}/${workspaceFolderBasename}",
-            },
-            "problemMatcher": []
-        },
-        {
-            "type": "shell",
-            "label": "qmlscene",
-            "command": [
-                "export PATH=$SDKS_LOCATION/Qt5/bin:$PATH;",
-                "qmlscene ${fileDirname}/${fileBasename}"
-            ],
-            "problemMatcher": []
-        },
-        {
-            "type": "shell",
-            "label": "python",
-            "command": "python ${fileDirname}/${fileBasename}",
-            "problemMatcher": []
-        }
-    ]
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "shell",
+      "label": "buildProject",
+      "windows": {
+        "command": "${workspaceFolder}/.buildSystem/windows/buildProject.bat",
+      },
+      "linux": {
+        "command": "${workspaceFolder}/.buildSystem/linux/buildProject.sh",
+      },
+      "osx": {
+        "command": "${workspaceFolder}/.buildSystem/osx/buildProject.sh",
+      },
+      "args": [
+        "${workspaceFolder}"
+      ],
+      "problemMatcher": [],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    {
+      "type": "shell",
+      "label": "buildFolder",
+      "windows": {
+        "command": "${workspaceFolder}/.buildSystem/windows/buildFolder.bat",
+      },
+      "linux": {
+        "command": "${workspaceFolder}/.buildSystem/linux/buildFolder.sh",
+      },
+      "osx": {
+        "command": "${workspaceFolder}/.buildSystem/osx/buildFolder.sh",
+      },
+      "args": [
+        "${workspaceFolder}",
+        "${relativeFileDirname}",
+      ],
+      "problemMatcher": [],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    {
+      "type": "shell",
+      "label": "buildFile",
+      "windows": {
+        "command": "${workspaceFolder}/.buildSystem/windows/buildFile.bat",
+      },
+      "linux": {
+        "command": "${workspaceFolder}/.buildSystem/linux/buildFile.sh",
+      },
+      "osx": {
+        "command": "${workspaceFolder}/.buildSystem/osx/buildFile.sh",
+      },
+      "args": [
+        "${workspaceFolder}",
+        "${fileDirname}",
+        "${fileBasenameNoExtension}",
+      ],
+      "problemMatcher": [],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    {
+      "type": "shell",
+      "label": "buildProject_debug",
+      "windows": {
+        "command": "${workspaceFolder}/.buildSystem/windows/buildProject_debug.bat",
+      },
+      "linux": {
+        "command": "${workspaceFolder}/.buildSystem/linux/buildProject_debug.sh",
+      },
+      "osx": {
+        "command": "${workspaceFolder}/.buildSystem/osx/buildProject_debug.sh",
+      },
+      "args": [
+        "${workspaceFolder}"
+      ],
+      "problemMatcher": [],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    {
+      "type": "shell",
+      "label": "buildFolder_debug",
+      "windows": {
+        "command": "${workspaceFolder}/.buildSystem/windows/buildFolder_debug.bat",
+      },
+      "linux": {
+        "command": "${workspaceFolder}/.buildSystem/linux/buildFolder_debug.sh",
+      },
+      "osx": {
+        "command": "${workspaceFolder}/.buildSystem/osx/buildFolder_debug.sh",
+      },
+      "args": [
+        "${fileDirname}",
+        "${fileBasenameNoExtension}",
+      ],
+      "problemMatcher": [],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    {
+      "type": "shell",
+      "label": "buildFile_debug",
+      "windows": {
+        "command": "${workspaceFolder}/.buildSystem/windows/buildFile_debug.bat",
+      },
+      "linux": {
+        "command": "${workspaceFolder}/.buildSystem/linux/buildFile_debug.sh",
+      },
+      "osx": {
+        "command": "${workspaceFolder}/.buildSystem/osx/buildFile_debug.sh",
+      },
+      "args": [
+        "${relativeFileDirname}",
+      ],
+      "problemMatcher": [],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    { // Run the executable
+      "type": "shell",
+      "label": "run",
+      "windows": {
+        "command": "${workspaceFolder}/${workspaceFolderBasename}.exe",
+      },
+      "linux": {
+        "command": "${workspaceFolder}/${workspaceFolderBasename}",
+      },
+      "problemMatcher": []
+    },
+    { // Run qml file with qmlscene
+      "type": "shell",
+      "label": "qmlscene",
+      "command": [
+        "export PATH=$SDKS_LOCATION/Qt5/bin:$PATH;",
+        "qmlscene ${fileDirname}/${fileBasename}"
+      ],
+      "problemMatcher": []
+    },
+    { // Run py file with python2
+      "type": "shell",
+      "label": "python2",
+      "command": "python ${fileDirname}/${fileBasename}",
+      "problemMatcher": []
+    },
+    { // Run py file with python3
+      "type": "shell",
+      "label": "python3",
+      "command": "python ${fileDirname}/${fileBasename}",
+      "problemMatcher": []
+    }
+  ]
 }
