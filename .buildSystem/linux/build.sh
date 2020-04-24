@@ -16,10 +16,10 @@ LINUX_DIR=$(dirname "$0")
 
 # --------- Common ---------- #
 cd $ROOT
-if test -d build; then
+if [ -d build ] && [ "$FOLDER" != "." ]; then
     rm -rf build
 fi
-if test -f "$TARGET_NAME"; then
+if [ -f "$TARGET_NAME" ]; then
     rm -rf $TARGET_NAME
 fi
 mkdir build
@@ -46,5 +46,9 @@ fi
 
 # ---= Running EXE File =---- #
 cd $ROOT
-./$TARGET_NAME --gtest_output="xml:./$TARGET_NAME.xml"
+if [ -f $ROOT/$TARGET_NAME ]; then
+    ./$TARGET_NAME
+    # ./$TARGET_NAME --gtest_output="xml:./$TARGET_NAME.xml"
+fi
+
 # --------------------------- #
