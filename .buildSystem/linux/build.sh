@@ -16,7 +16,7 @@ LINUX_DIR=$(dirname "$0")
 
 # --------- Common ---------- #
 cd $ROOT
-if [ -d build ] && [ "$FOLDER" != "." ]; then
+if [ -d build ]; then
     rm -rf build
 fi
 if [ -f "$TARGET_NAME" ]; then
