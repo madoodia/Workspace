@@ -1,4 +1,3 @@
-// Place your key bindings in this file to override the defaults
 [
     {
         "key": "ctrl+alt+q",
@@ -20,36 +19,16 @@
         "command": "workbench.action.tasks.runTask",
         "args": "python3"
     },
-    { // custom buildSystem -----------------
-        "key": "ctrl+alt+w",
+    {
+        "key": "ctrl+alt+b",
         "command": "workbench.action.tasks.runTask",
-        "args": "buildProject"
+        "args": "build"
     },
     {
-        "key": "ctrl+alt+p",
+        "key": "alt+shift+b",
         "command": "workbench.action.tasks.runTask",
-        "args": "buildFolder"
+        "args": "build_vs"
     },
-    {
-        "key": "ctrl+alt+s",
-        "command": "workbench.action.tasks.runTask",
-        "args": "buildFile"
-    },
-    { // Build Visual Studio Solution in Windows
-        "key": "alt+shift+w",
-        "command": "workbench.action.tasks.runTask",
-        "args": "buildProject_vs"
-    },
-    {
-        "key": "alt+shift+p",
-        "command": "workbench.action.tasks.runTask",
-        "args": "buildFolder_vs"
-    },
-    {
-        "key": "alt+shift+s",
-        "command": "workbench.action.tasks.runTask",
-        "args": "buildFile_vs"
-    }, // custom buildSystem -----------------
     {
         "key": "ctrl+u",
         "command": "editor.action.transformToUppercase"

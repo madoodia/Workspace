@@ -12,7 +12,7 @@
       "args": [],
       "stopAtEntry": false,
       "cwd": "${workspaceFolder}",
-      "preLaunchTask": "buildProject_debug",
+      "preLaunchTask": "build_debug",
       "environment": [],
       "externalConsole": false,
       "windows": {},

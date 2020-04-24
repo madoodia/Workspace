@@ -3,40 +3,20 @@
   "tasks": [
     {
       "type": "shell",
-      "label": "buildProject",
+      "label": "build",
       "windows": {
-        "command": "${workspaceFolder}/.buildSystem/windows/buildProject.bat",
+        "command": "${workspaceFolder}/.buildSystem/windows/build.bat",
       },
       "linux": {
-        "command": "${workspaceFolder}/.buildSystem/linux/buildProject.sh",
+        "command": "${workspaceFolder}/.buildSystem/linux/build.sh",
       },
       "osx": {
-        "command": "${workspaceFolder}/.buildSystem/osx/buildProject.sh",
-      },
-      "args": [
-        "${workspaceFolder}"
-      ],
-      "problemMatcher": [],
-      "group": {
-        "kind": "build",
-        "isDefault": true
-      }
-    },
-    {
-      "type": "shell",
-      "label": "buildFolder",
-      "windows": {
-        "command": "${workspaceFolder}/.buildSystem/windows/buildFolder.bat",
-      },
-      "linux": {
-        "command": "${workspaceFolder}/.buildSystem/linux/buildFolder.sh",
-      },
-      "osx": {
-        "command": "${workspaceFolder}/.buildSystem/osx/buildFolder.sh",
+        "command": "${workspaceFolder}/.buildSystem/osx/build.sh",
       },
       "args": [
         "${workspaceFolder}",
         "${relativeFileDirname}",
+        "${fileBasenameNoExtension}"
       ],
       "problemMatcher": [],
       "group": {
@@ -46,84 +26,20 @@
     },
     {
       "type": "shell",
-      "label": "buildFile",
+      "label": "build_debug",
       "windows": {
-        "command": "${workspaceFolder}/.buildSystem/windows/buildFile.bat",
+        "command": "${workspaceFolder}/.buildSystem/windows/build_debug.bat",
       },
       "linux": {
-        "command": "${workspaceFolder}/.buildSystem/linux/buildFile.sh",
+        "command": "${workspaceFolder}/.buildSystem/linux/build_debug.sh",
       },
       "osx": {
-        "command": "${workspaceFolder}/.buildSystem/osx/buildFile.sh",
+        "command": "${workspaceFolder}/.buildSystem/osx/build_debug.sh",
       },
       "args": [
         "${workspaceFolder}",
-        "${fileDirname}",
-        "${fileBasenameNoExtension}",
-      ],
-      "problemMatcher": [],
-      "group": {
-        "kind": "build",
-        "isDefault": true
-      }
-    },
-    {
-      "type": "shell",
-      "label": "buildProject_debug",
-      "windows": {
-        "command": "${workspaceFolder}/.buildSystem/windows/buildProject_debug.bat",
-      },
-      "linux": {
-        "command": "${workspaceFolder}/.buildSystem/linux/buildProject_debug.sh",
-      },
-      "osx": {
-        "command": "${workspaceFolder}/.buildSystem/osx/buildProject_debug.sh",
-      },
-      "args": [
-        "${workspaceFolder}"
-      ],
-      "problemMatcher": [],
-      "group": {
-        "kind": "build",
-        "isDefault": true
-      }
-    },
-    {
-      "type": "shell",
-      "label": "buildFolder_debug",
-      "windows": {
-        "command": "${workspaceFolder}/.buildSystem/windows/buildFolder_debug.bat",
-      },
-      "linux": {
-        "command": "${workspaceFolder}/.buildSystem/linux/buildFolder_debug.sh",
-      },
-      "osx": {
-        "command": "${workspaceFolder}/.buildSystem/osx/buildFolder_debug.sh",
-      },
-      "args": [
-        "${fileDirname}",
-        "${fileBasenameNoExtension}",
-      ],
-      "problemMatcher": [],
-      "group": {
-        "kind": "build",
-        "isDefault": true
-      }
-    },
-    {
-      "type": "shell",
-      "label": "buildFile_debug",
-      "windows": {
-        "command": "${workspaceFolder}/.buildSystem/windows/buildFile_debug.bat",
-      },
-      "linux": {
-        "command": "${workspaceFolder}/.buildSystem/linux/buildFile_debug.sh",
-      },
-      "osx": {
-        "command": "${workspaceFolder}/.buildSystem/osx/buildFile_debug.sh",
-      },
-      "args": [
         "${relativeFileDirname}",
+        "${fileBasenameNoExtension}"
       ],
       "problemMatcher": [],
       "group": {
