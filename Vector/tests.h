@@ -5,7 +5,7 @@
 #include "api.h"
 #include "mVector.h"
 
-TEST(TestMVector, TestEmptyArray)
+TEST(TestMVector, TestEmptyVector)
 {
   // ...
 }

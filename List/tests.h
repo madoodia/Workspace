@@ -5,7 +5,7 @@
 #include "api.h"
 #include "mList.h"
 
-TEST(TestMList, TestEmptyArray)
+TEST(TestMList, TestEmptyList)
 {
   // ...
 }

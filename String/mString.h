@@ -2,8 +2,8 @@
 /* (C) 2020 madoodia.com */
 /* --------------------- */
 
-#ifndef MSTRINGS_H
-#define MSTRINGS_H
+#ifndef MSTRING_H
+#define MSTRING_H
 
 #include "api.h"
 
@@ -52,4 +52,4 @@ private:
 
 } // namespace mapi
 
-#endif // MSTRINGS_H
+#endif // MSTRING_H
