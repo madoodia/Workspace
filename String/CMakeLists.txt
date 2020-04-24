@@ -13,10 +13,5 @@ set(SOURCES
 include_directories(../Core)
 add_executable($ENV{TARGET_NAME} ${SOURCES})
 
-# Locate GTest
-find_package(GTest REQUIRED)
-include_directories(${GTEST_INCLUDE_DIRS})
-target_link_libraries($ENV{TARGET_NAME} ${GTEST_LIBRARIES} pthread)
-
-# Running
-# cmake -G "Unix Makefiles" -DCMAKE_PREFIX_PATH="/mnt/hdd/madoodia/sdks/googletest" .
+add_subdirectory($ENV{GTEST_BASE_LOCATION} ./build)
+target_link_libraries($ENV{TARGET_NAME} PUBLIC gtest)
