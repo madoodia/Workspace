@@ -25,7 +25,7 @@ fi
 mkdir build
 cd build
 
-cmake -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH=$GTEST_LOCATION $ROOT/$FOLDER
+cmake -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH=$EXTRA_PREFIX_PATH $ROOT/$FOLDER
 cmake --build .
 
 # ---= Workspace Project =--- #

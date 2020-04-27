@@ -28,6 +28,5 @@ export STB_LOCATION=$SDKS_LOCATION/stb
 export OPENCL_LOCATION=$SDKS_LOCATION/OpenCL
 
 # Adding Extra custom Definitions of the project
-if [ -f "../../extra.sh" ]; then
-    . ../../extra.sh
-fi
+. $ROOT/extra.sh
+
