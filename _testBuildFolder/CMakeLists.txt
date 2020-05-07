@@ -13,9 +13,7 @@ set(SOURCES
     main.cpp
 )
 
-# Locate GTest
-find_package(GTest REQUIRED)
-include_directories(${GTEST_INCLUDE_DIRS})
+add_executable($ENV{TARGET_NAME} ${SOURCES})
 
 add_subdirectory($ENV{GTEST_BASE_LOCATION} ./build)
 target_link_libraries($ENV{TARGET_NAME} PUBLIC gtest)

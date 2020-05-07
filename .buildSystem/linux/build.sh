@@ -16,13 +16,17 @@ LINUX_DIR=$(dirname "$0")
 
 # --------- Common ---------- #
 cd $ROOT
-if [ -d build ]; then
+if [ -d build ] && [ "$NEED_BUILD" = 0 ]; then
     rm -rf build
 fi
+if [ ! -d "build" ]; then
+    mkdir build
+fi
+
 if [ -f "$TARGET_NAME" ]; then
     rm -rf $TARGET_NAME
 fi
-mkdir build
+
 cd build
 
 cmake -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH=$EXTRA_PREFIX_PATH $ROOT/$FOLDER
