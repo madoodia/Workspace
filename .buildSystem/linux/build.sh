@@ -16,7 +16,7 @@ LINUX_DIR=$(dirname "$0")
 
 # --------- Common ---------- #
 cd $ROOT
-if [ -d build ] && [ "$NEED_BUILD" = 0 ]; then
+if [ -d build ] && [ "$NEED_BUILD" = 1 ]; then
     rm -rf build
 fi
 if [ ! -d "build" ]; then
