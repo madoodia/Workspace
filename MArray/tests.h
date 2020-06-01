@@ -3,9 +3,9 @@
 /* --------------------- */
 
 #include "api.h"
-#include "mVector.h"
+#include "mArray.h"
 
-TEST(TestMVector, TestEmptyVector)
+TEST(TestMArray, TestEmptyArray)
 {
   // ...
 }

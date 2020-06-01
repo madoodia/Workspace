@@ -7,7 +7,7 @@ project($ENV{TARGET_NAME} CXX)
 
 set(SOURCES
     main.cpp
-    mVector.cpp
+    mArray.cpp
 )
 
 include_directories(../Core)

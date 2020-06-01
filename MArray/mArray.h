@@ -1,6 +1,6 @@
 
-#ifndef MVECTOR_H
-#define MVECTOR_H
+#ifndef MARRAY_H
+#define MARRAY_H
 
 #include "api.h"
 
@@ -9,4 +9,4 @@ namespace mapi
 
 } // namespace mapi
 
-#endif // MVECTOR_H
+#endif // MARRAY_H
