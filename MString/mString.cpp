@@ -17,6 +17,10 @@ MString::MString(const char *str) : mStr(str)
   //printf("Second Constructor\n");
 }
 
+MString::MString(const std::string &str) : mStr(str.c_str())
+{
+}
+
 MString::MString(const MString &str)
 {
   //printf("Copy Constructor\n");

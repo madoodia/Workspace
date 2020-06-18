@@ -5,6 +5,8 @@
 #ifndef MSTRING_H
 #define MSTRING_H
 
+#include <string.h>
+
 #include "api.h"
 
 namespace mapi
@@ -18,6 +20,7 @@ public:
 
   // Constructor
   explicit MString(const char *str);
+  explicit MString(const std::string &str);
 
   // Copy Constructor
   MString(const MString &str);
