@@ -10,28 +10,28 @@
 namespace mapi
 {
 
-class String
+class MString
 {
 public:
   // Default Constructor
-  String();
+  MString();
 
   // Constructor
-  explicit String(const char *str);
+  explicit MString(const char *str);
 
   // Copy Constructor
-  String(const String &str);
+  MString(const MString &str);
 
   // Destructor
-  ~String();
+  ~MString();
 
   // Assignment Operator
-  String &operator=(const char *other);
-  String &operator=(const String &other);
+  MString &operator=(const char *other);
+  MString &operator=(const MString &other);
 
   // Other Operators
-  String &operator+=(const char *str);
-  String &operator+=(const String &other);
+  MString &operator+=(const char *str);
+  MString &operator+=(const MString &other);
 
   // Member Functions
   const char *name() const;
@@ -40,11 +40,11 @@ public:
   void append(const char *str);
 
   // non-member friend functions
-  friend String operator+(const String &lhs, const char *rhs);
-  friend String operator+(const char *lhs, const String &rhs);
-  friend String operator+(const String &lhs, const String &rhs);
-  friend std::ostream &operator<<(std::ostream &stream, const String &other);
-  friend String combine(const char *str1, const char *str2);
+  friend MString operator+(const MString &lhs, const char *rhs);
+  friend MString operator+(const char *lhs, const MString &rhs);
+  friend MString operator+(const MString &lhs, const MString &rhs);
+  friend std::ostream &operator<<(std::ostream &stream, const MString &other);
+  friend MString combine(const char *str1, const char *str2);
 
 private:
   const char *mStr;

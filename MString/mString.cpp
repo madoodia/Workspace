@@ -7,30 +7,30 @@
 namespace mapi
 {
 
-String::String() : mStr("")
+MString::MString() : mStr("")
 {
   //printf("Default Constructor\n");
 }
 
-String::String(const char *str) : mStr(str)
+MString::MString(const char *str) : mStr(str)
 {
   //printf("Second Constructor\n");
 }
 
-String::String(const String &str)
+MString::MString(const MString &str)
 {
   //printf("Copy Constructor\n");
   mStr = str.name();
 }
 
-String::~String()
+MString::~MString()
 {
 }
 
 // Friend Functions -------
-String combine(const char *str1, const char *str2)
+MString combine(const char *str1, const char *str2)
 {
-  String result;
+  MString result;
 
   char buffer[strlen(str1) + strlen(str2)];
   strncpy(buffer, str1, sizeof(buffer));
@@ -40,67 +40,67 @@ String combine(const char *str1, const char *str2)
   return result;
 }
 
-String operator+(const String &lhs, const char *rhs)
+MString operator+(const MString &lhs, const char *rhs)
 {
   return combine(lhs.name(), rhs);
 }
 
-String operator+(const char *lhs, const String &rhs)
+MString operator+(const char *lhs, const MString &rhs)
 {
   return combine(lhs, rhs.name());
 }
 
-String operator+(const String &lhs, const String &rhs)
+MString operator+(const MString &lhs, const MString &rhs)
 {
   return combine(lhs.name(), rhs.name());
 }
 
-std::ostream &operator<<(std::ostream &stream, const String &other)
+std::ostream &operator<<(std::ostream &stream, const MString &other)
 {
   stream << other.name();
   return stream;
 }
 
 // Class Member Functions -------
-int String::size() const
+int MString::size() const
 {
   return strlen(mStr);
 }
 
-const char *String::name() const
+const char *MString::name() const
 {
   return mStr;
 }
 
-void String::setName(const char *name)
+void MString::setName(const char *name)
 {
   mStr = name;
 }
 
-void String::append(const char *str)
+void MString::append(const char *str)
 {
   mStr = combine(mStr, str).name();
 }
 
-String &String::operator=(const char *other)
+MString &MString::operator=(const char *other)
 {
   mStr = other;
   return *this;
 }
 
-String &String::operator=(const String &other)
+MString &MString::operator=(const MString &other)
 {
   mStr = other.name();
   return *this;
 }
 
-String &String::operator+=(const char *str)
+MString &MString::operator+=(const char *str)
 {
   *this = combine(mStr, str);
   return *this;
 }
 
-String &String::operator+=(const String &other)
+MString &MString::operator+=(const MString &other)
 {
   *this = combine(mStr, other.name());
   return *this;
