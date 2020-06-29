@@ -2,8 +2,8 @@
 /* (C) 2020 madoodia.com */
 /* --------------------- */
 
+#include "MString_tst.h"
 #include "mapi.h"
-#include "tests.h"
 
 // Entry Point
 int main(int argc, char *argv[])

@@ -23,4 +23,4 @@ endif()
 
 add_library(${CURRENT_FOLDER} STATIC ${SOURCES})
 
-add_subdirectory(tests)
+add_subdirectory(MString_tst)
