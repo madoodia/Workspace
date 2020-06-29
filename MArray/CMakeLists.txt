@@ -2,16 +2,25 @@
 # (C) 2020 madoodia.com #
 # --------------------- #
 
-cmake_minimum_required(VERSION 3.3)
+cmake_minimum_required(VERSION 3.6)
 project($ENV{TARGET_NAME} CXX)
 
+set(CMAKE_CXX_STANDARD 11)
+
+get_filename_component(CURRENT_FOLDER ${CMAKE_CURRENT_SOURCE_DIR} NAME)
+
 set(SOURCES
-    main.cpp
     mArray.cpp
 )
 
 include_directories(../Core)
-add_executable($ENV{TARGET_NAME} ${SOURCES})
+# add_executable($ENV{TARGET_NAME} ${SOURCES})
+if(NOT DEFINED BUILD_ALL)
+    include_directories($ENV{GTEST_BASE_LOCATION}/googletest/include)
+    include_directories($ENV{GTEST_BASE_LOCATION}/googlemock/include)
+    add_subdirectory($ENV{GTEST_BASE_LOCATION} ./build)    
+endif()
 
-add_subdirectory($ENV{GTEST_BASE_LOCATION} ./build)
-target_link_libraries($ENV{TARGET_NAME} PUBLIC gtest)
+add_library(${CURRENT_FOLDER} STATIC ${SOURCES})
+
+add_subdirectory(tests)
