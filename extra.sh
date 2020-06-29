@@ -3,4 +3,4 @@
 # --------------------- #
 
 # If you have extra path that need to be compiled add here
-export NEED_BUILD=0
+export NEED_BUILD=1

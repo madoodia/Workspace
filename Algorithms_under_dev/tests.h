@@ -5,8 +5,8 @@
 #ifndef MSTRINGSTESTS_H
 #define MSTRINGSTESTS_H
 
-#include "api.h"
 #include "mAlgorithms.h"
+#include "mapi.h"
 
 TEST(TestMAlgorithms, TestEmptyAlgorithms)
 {

@@ -2,8 +2,8 @@
 /* (C) 2020 madoodia.com */
 /* --------------------- */
 
-#include "api.h"
 #include "mSet.h"
+#include "mapi.h"
 
 TEST(TestMSet, TestEmptyArray)
 {

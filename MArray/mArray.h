@@ -2,7 +2,7 @@
 #ifndef MARRAY_H
 #define MARRAY_H
 
-#include "api.h"
+#include "mapi.h"
 
 namespace mapi
 {

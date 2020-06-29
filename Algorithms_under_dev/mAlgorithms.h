@@ -5,7 +5,7 @@
 #ifndef MALGORITHMS_H
 #define MALGORITHMS_H
 
-#include "api.h"
+#include "mapi.h"
 
 namespace mapi
 {
