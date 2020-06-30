@@ -26,6 +26,25 @@
     },
     {
       "type": "shell",
+      "label": "runTest",
+      "windows": {},
+      "linux": {
+        "command": "${workspaceFolder}/.buildSystem/linux/runTest.sh",
+      },
+      "osx": {},
+      "args": [
+        "${workspaceFolder}",
+        "${relativeFileDirname}",
+        "${fileBasenameNoExtension}"
+      ],
+      "problemMatcher": [],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    {
+      "type": "shell",
       "label": "build_debug",
       "windows": {
         "command": "${workspaceFolder}/.buildSystem/windows/build_debug.bat",
