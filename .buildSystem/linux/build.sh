@@ -32,27 +32,27 @@ cd build
 cmake -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH=$EXTRA_PREFIX_PATH $ROOT/$FOLDER
 cmake --build .
 
-# ---= Workspace Project =--- #
-# --------- Release --------- #
-if [ "$FOLDER" = "." ]; then
-    cp src/$TARGET_NAME $ROOT
-fi
-# --------------------------- #
+# # ---= Workspace Project =--- #
+# # --------- Release --------- #
+# if [ "$FOLDER" = "." ]; then
+#     cp src/$TARGET_NAME $ROOT
+# fi
+# # --------------------------- #
 
 
-# ----= Folder Project =----- #
-# -----= File Project =------ #
-# --------- Release --------- #
-if [ "$FOLDER" != "." ]; then
-    cp $TARGET_NAME $ROOT
-fi
-# --------------------------- #
+# # ----= Folder Project =----- #
+# # -----= File Project =------ #
+# # --------- Release --------- #
+# if [ "$FOLDER" != "." ]; then
+#     cp $TARGET_NAME $ROOT
+# fi
+# # --------------------------- #
 
-# ---= Running EXE File =---- #
-cd $ROOT
-if [ -f $ROOT/$TARGET_NAME ]; then
-    ./$TARGET_NAME
-    # ./$TARGET_NAME --gtest_output="xml:./$TARGET_NAME.xml"
-fi
+# # ---= Running EXE File =---- #
+# cd $ROOT
+# if [ -f $ROOT/$TARGET_NAME ]; then
+#     ./$TARGET_NAME
+#     # ./$TARGET_NAME --gtest_output="xml:./$TARGET_NAME.xml"
+# fi
 
 # --------------------------- #
