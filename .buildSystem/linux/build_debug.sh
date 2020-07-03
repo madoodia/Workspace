@@ -16,30 +16,19 @@ LINUX_DIR=$(dirname "$0")
 
 # --------- Common ---------- #
 cd $ROOT
-if test -d build; then
+if [ -d build ] && [ "$NEED_BUILD" = 1 ]; then
     rm -rf build
 fi
-if test -f "$TARGET_NAME"; then
+if [ ! -d "build" ]; then
+    mkdir build
+fi
+
+if [ -f "$TARGET_NAME" ]; then
     rm -rf $TARGET_NAME
 fi
-mkdir build
+
 cd build
 
 cmake -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_PREFIX_PATH=$GTEST_LOCATION $ROOT/$FOLDER
 cmake --build .
 
-# ---= Workspace Project =--- #
-# --------- Release --------- #
-if [ "$FOLDER" = "." ]; then
-    cp src/$TARGET_NAME $ROOT
-fi
-# --------------------------- #
-
-
-# ----= Folder Project =----- #
-# -----= File Project =------ #
-# --------- Release --------- #
-if [ "$FOLDER" != "." ]; then
-    cp $TARGET_NAME $ROOT
-fi
-# --------------------------- #
